@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning & Qualification System | Dr. Chetankumar Patel</title>
+<meta name="description" content="Case Study 02 — Building a Learning & Qualification System for Solar Manufacturing.">
+<style>
+:root{--bg:#f7f8fa;--surface:#fff;--ink:#172033;--muted:#5f6b7a;--line:#dfe4ea;--accent:#2457a6;--accent-soft:#eaf1fb;--dark:#14213d;--green:#16856b;--shadow:0 10px 30px rgba(20,33,61,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.page{display:flex;min-height:100vh}.sidebar{width:300px;position:sticky;top:0;height:100vh;background:var(--dark);color:#fff;padding:30px 22px;overflow-y:auto}.brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}.case-title{font-size:22px;line-height:1.25;margin:8px 0 22px}.nav-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:20px 0 8px}.nav a{display:block;color:#dbe5f5;padding:8px 10px;margin:2px 0;border-left:3px solid transparent;border-radius:0 6px 6px 0;font-size:13px;line-height:1.35}.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);border-left-color:#fff;text-decoration:none;color:#fff}.back{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}.back a{color:#dbe5f5;font-size:12px}.main{width:min(1120px,100%);padding:46px 54px 75px}.hero{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:42px 44px;box-shadow:var(--shadow);margin-bottom:28px}.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}h1{font-size:41px;line-height:1.12;margin:9px 0 13px}h2{font-size:29px;line-height:1.2;margin:0 0 14px}h3{font-size:20px;margin:26px 0 9px}.lead{font-size:18px;color:var(--muted);max-width:900px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tag{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fbfcfe;font-size:11px;color:var(--muted)}.section{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 38px;margin-bottom:24px;box-shadow:var(--shadow);scroll-margin-top:22px}.section-intro{color:var(--muted);max-width:900px}.callout{background:var(--accent-soft);border-left:4px solid var(--accent);padding:17px 19px;margin:22px 0;border-radius:0 10px 10px 0}.green-callout{background:#eef9f5;border-left-color:var(--green)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fcfdff}.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:var(--muted);font-size:13px}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:22px 0}.flow span{background:#f4f6f9;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;font-weight:650}.flow b{color:var(--accent);font-size:17px}.method-panel{margin:24px 0;border:1px solid #cbd8ea;border-radius:14px;background:#f7faff;padding:20px}.method-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:10px}.method-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.method{background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:12px}.method strong{display:block;font-size:13px}.method span{display:block;color:var(--muted);font-size:11px;line-height:1.45;margin-top:3px}.level-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:20px 0}.level{border-radius:9px;padding:12px 7px;text-align:center;background:#f5f7fa;border:1px solid var(--line)}.level strong{display:block;color:var(--accent);font-size:15px}.level span{display:block;font-size:10px;color:var(--muted);margin-top:2px}.competencies{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:18px 0}.competency{border:1px solid var(--line);border-radius:10px;padding:11px;background:#fff;font-size:12px;font-weight:700}.figure{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcfe;margin:22px 0}.figure img{width:100%;height:auto;display:block;border-radius:9px}.figure-title{font-weight:750;font-size:14px;margin-bottom:9px}.caption{font-size:11px;color:var(--muted);margin-top:8px}.evidence{border:1px dashed #aeb8c6;border-radius:12px;padding:17px;background:#fafbfc;margin:15px 0}.evidence strong{display:block;margin-bottom:3px}.evidence small{color:var(--muted);font-size:11px}.quote{font-size:22px;line-height:1.45;font-weight:650;padding:6px 0}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}.metric{background:var(--dark);color:#fff;border-radius:11px;padding:16px}.metric .n{font-size:22px;font-weight:750;display:block}.metric .l{font-size:10px;opacity:.75}.confidential{background:#fff8e7;border:1px solid #e8d6a1;border-radius:12px;padding:16px 18px;color:#66531d;font-size:13px}.download{display:inline-block;background:var(--dark);color:#fff;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:700}.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:30px}
+@media(max-width:900px){.page{display:block}.sidebar{position:relative;width:100%;height:auto;padding:22px}.nav{display:flex;flex-wrap:wrap;gap:3px}.nav a{margin:0}.main{padding:25px 17px 55px}.hero,.section{padding:26px 21px}h1{font-size:33px}.grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr 1fr}.level-grid{grid-template-columns:repeat(3,1fr)}.competencies{grid-template-columns:1fr 1fr}.metric-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<aside class="sidebar">
+  <div class="brand">Case Study 02</div>
+  <h2 class="case-title">Building a Learning &amp; Qualification System</h2>
+  <div class="nav-label">Case navigation</div>
+  <nav class="nav">
+    <a href="#business-context" class="active">Business Context</a>
+    <a href="#design-challenge">The Design Challenge</a>
+    <a href="#approach">My Approach</a>
+    <a href="#knowledge-harvesting">Knowledge Harvesting</a>
+    <a href="#master-handbook">Master Handbook</a>
+    <a href="#competency-framework">Competency Framework</a>
+    <a href="#competency-categories">Competency Categories</a>
+    <a href="#job-matrix">Job Matrix</a>
+    <a href="#gap-analysis">Gap Analysis</a>
+    <a href="#learning-paths">Learning Paths</a>
+    <a href="#lms">LMS Integration</a>
+    <a href="#ojt">OJT as a Structured Learning Experience</a>
+    <a href="#assessment">Assessment &amp; Qualification</a>
+    <a href="#certification">Certification &amp; Recertification</a>
+    <a href="#performance">Performance Improvement</a>
+    <a href="#machine-learning">Machine-Specific Learning Architecture</a>
+    <a href="#progressive-capability">Progressive Machine Capability</a>
+    <a href="#content-production">Content Production</a>
+    <a href="#content-governance">Content Governance</a>
+    <a href="#evidence">Evidence</a>
+    <a href="case-study-02-infographic-map.html">InfoGraphic Map</a>
+  </nav>
+  <div class="back"><a href="index.html">← Back to Case Overview</a></div>
+</aside>
+<main class="main">
+<section class="hero">
+  <div class="eyebrow">Learning Architecture · Capability Development · Instructional Design</div>
+  <h1>Building a Learning &amp; Qualification System for Solar Manufacturing</h1>
+  <p class="lead">From operational knowledge to a structured, competency-based workforce — a plant-wide Learning &amp; Qualification System designed to connect competencies, learning, workplace practice, assessment, certification and performance improvement.</p>
+  <div class="meta">
+    <span class="tag">Learning Architecture</span><span class="tag">Competency-Based Learning</span><span class="tag">Instructional Design</span><span class="tag">OJT</span><span class="tag">LMS</span><span class="tag">Assessment</span><span class="tag">Content Governance</span>
+  </div>
+</section>
+
+<section class="section" id="business-context">
+<div class="eyebrow">01</div><h2>Business Context</h2>
+<p>The solar manufacturing plant was a newly established manufacturing operation. Initial onboarding support was provided through existing manuals, training guides and onboarding sessions, while the plant developed its own SOPs.</p>
+<div class="callout"><strong>The capability gap:</strong> the plant had operational knowledge and SOPs, but did not yet have a structured learning system to consistently transfer that knowledge to new and existing employees. Much of the training was happening informally through experienced employees teaching newcomers during normal operations.</div>
+<p>The requirement was therefore larger than preparing training material: <strong>build a plant-wide Learning &amp; Qualification System</strong> connecting operational knowledge, competency, learning, OJT, assessment, certification and performance improvement.</p>
+</section>
+
+<section class="section" id="design-challenge"><div class="eyebrow">02</div><h2>The Design Challenge</h2>
+<p>The system needed to serve multiple operational functions while remaining scalable.</p>
+<div class="grid"><div class="card"><h3>Core operational departments</h3><p>Production · Quality Control · Maintenance</p></div><div class="card"><h3>Broader architecture</h3><p>Engineering · Warehouse · EHS · Learning &amp; Development</p></div></div>
+<p>The architecture needed to answer: What does each role need to know? What must each employee be able to do? What competency level is required? Which learning should come first? What can be learned digitally? What must be demonstrated on the job? How should competence be assessed? When is an employee qualified and when should qualification be renewed?</p>
+</section>
+
+<section class="section" id="approach"><div class="eyebrow">03</div><h2>My Approach</h2>
+<p>I designed the system around a simple principle:</p>
+<div class="quote">Build from <strong>Jobs → Competencies → Skills → Learning → Qualification.</strong></div>
+<p>The architecture was deliberately designed as a <strong>system</strong>, rather than as a collection of independent training courses.</p>
+<div class="flow"><span>Governance</span><b>→</b><span>Competency Framework</span><b>→</b><span>Skill Matrix</span><b>→</b><span>Learning Path</span><b>→</b><span>OJT &amp; Assessment</span><b>→</b><span>Certification</span><b>→</b><span>Recertification</span><b>→</b><span>Performance Improvement</span></div>
+<div class="callout green-callout"><strong>Intended outcome:</strong> a competent, safe, efficient and certified workforce.</div>
+<div class="method-panel"><div class="method-label">L&amp;D / Instructional Design lens</div><div class="method-grid"><div class="method"><strong>Learning Architecture</strong><span>Connect jobs, competencies, learning and qualification.</span></div><div class="method"><strong>Competency-Based Learning</strong><span>Define capability levels and role expectations.</span></div><div class="method"><strong>Experiential / Workplace Learning</strong><span>Combine structured OJT with digital learning.</span></div><div class="method"><strong>Performance-Based Assessment</strong><span>Qualification requires demonstrated capability and evidence.</span></div></div></div>
+</section>
+
+<section class="section" id="knowledge-harvesting"><div class="eyebrow">04</div><h2>Knowledge Harvesting</h2>
+<p>A new plant contains knowledge in many forms: manuals, SOPs, onboarding material, expert knowledge, observations, interviews, workshops, lessons learned and operational experience.</p>
+<div class="flow"><span>Interviews</span><b>+</b><span>Observations</span><b>+</b><span>Documents</span><b>+</b><span>Expert Workshops</span><b>+</b><span>Lessons Learned</span><b>→</b><span>Structured Master Handbook</span></div>
+<p>Knowledge harvesting was therefore designed as the starting point rather than immediately beginning with course creation.</p>
+</section>
+
+<section class="section" id="master-handbook"><div class="eyebrow">05</div><h2>Master Handbook — Single Source of Truth</h2>
+<p>Rather than independently developing multiple versions of similar content for different departments, the architecture established a master content repository from which role-specific learning could subsequently be extracted.</p>
+<div class="flow"><span>Module</span><b>→</b><span>Unit</span><b>→</b><span>Section</span><b>→</b><span>Topic</span></div>
+<div class="grid"><div class="card"><h3>Consistency</h3><p>Common source content across learning outputs.</p></div><div class="card"><h3>Maintainability</h3><p>Changes can be managed centrally.</p></div><div class="card"><h3>Version control</h3><p>Controlled content hierarchy reduces uncontrolled duplication.</p></div><div class="card"><h3>Scalability</h3><p>Role-specific learning can be derived from one controlled base.</p></div></div>
+</section>
+
+<section class="section" id="competency-framework"><div class="eyebrow">06</div><h2>Competency Framework</h2>
+<p>OQS-01 defined competency categories, L0–L5 expectations, promotion rules and role requirements. The progression moves from awareness to independent performance and eventually coaching others.</p>
+<div class="level-grid"><div class="level"><strong>L0</strong><span>No Knowledge</span></div><div class="level"><strong>L1</strong><span>Awareness</span></div><div class="level"><strong>L2</strong><span>Assisted</span></div><div class="level"><strong>L3</strong><span>Independent</span></div><div class="level"><strong>L4</strong><span>Expert</span></div><div class="level"><strong>L5</strong><span>Trainer / Coach</span></div></div>
+</section>
+
+<section class="section" id="competency-categories"><div class="eyebrow">07</div><h2>Competency Categories</h2>
+<p>The architecture identified eight core competency categories so that capability was considered more broadly than technical knowledge alone.</p>
+<div class="competencies"><div class="competency">C1 — Safety</div><div class="competency">C2 — Process</div><div class="competency">C3 — Equipment</div><div class="competency">C4 — Operations</div><div class="competency">C5 — Quality</div><div class="competency">C6 — Maintenance</div><div class="competency">C7 — Problem Solving</div><div class="competency">C8 — Leadership</div></div>
+</section>
+
+<section class="section" id="job-matrix"><div class="eyebrow">08</div><h2>Job Matrix</h2>
+<p>JM-01 became the bridge between organizational roles and the learning system. It mapped job families and roles across Production, Quality, Maintenance, Engineering, Warehouse, EHS and L&amp;D.</p>
+<table><thead><tr><th>Job family</th><th>Example progression</th><th>Role definition includes</th></tr></thead><tbody><tr><td>Production</td><td>Machine Operator → Senior Operator → Lead Operator → Supervisor → Manager</td><td>Purpose, target qualification level, competencies, certification and recertification.</td></tr><tr><td>Quality</td><td>QC Inspector → IPQC Inspector → Lab Technician → QC Engineer → Manager</td><td>Role-specific capability and qualification requirements.</td></tr><tr><td>Maintenance</td><td>Technician → Senior Technician → Specialist → Engineer → Manager</td><td>Technical competency and qualification progression.</td></tr><tr><td>Engineering</td><td>Process Engineer → Senior Process Engineer → Manufacturing Engineer → Manager</td><td>Capability, certification and progression requirements.</td></tr></tbody></table>
+</section>
+
+<section class="section" id="gap-analysis"><div class="eyebrow">09</div><h2>Gap Analysis</h2>
+<p>The system introduced a formal capability-gap stage:</p>
+<div class="flow"><span>Current Capability</span><b>→</b><span>Required Capability</span><b>→</b><span>Gap</span><b>→</b><span>Learning Intervention</span><b>→</b><span>OJT</span><b>→</b><span>Assessment</span><b>→</b><span>Qualification</span></div>
+<p>This is the point at which L&amp;D becomes directly connected to workforce capability.</p>
+</section>
+
+<section class="section" id="learning-paths"><div class="eyebrow">10</div><h2>Learning Paths</h2>
+<p>Job requirements were translated into structured learning paths using the L0–L5 qualification journey. The design was role- and machine-specific rather than giving every employee the same generic training.</p>
+<div class="callout"><strong>Design question:</strong> What does this person need to learn, in what sequence, to become qualified for this role?</div>
+</section>
+
+<section class="section" id="lms"><div class="eyebrow">11</div><h2>LMS Integration</h2>
+<p>The architecture incorporated e-learning, assessments, learning tracking and analytics. The LMS was not treated merely as a place to upload PDFs; it became part of the qualification architecture.</p>
+<div class="flow"><span>Learning Path</span><b>→</b><span>LMS</span><b>→</b><span>Assessment</span><b>→</b><span>OJT</span><b>→</b><span>Evidence</span><b>→</b><span>Certification</span></div>
+<p><strong>The LMS supports the learning system; it does not define the learning system.</strong></p>
+</section>
+
+<section class="section" id="ojt"><div class="eyebrow">12</div><h2>OJT as a Structured Learning Experience</h2>
+<p>Because manufacturing competence cannot be established entirely through digital learning, the system deliberately combined LMS learning with On-the-Job Training.</p>
+<div class="grid"><div class="card"><h3>Structured OJT</h3><p>Practical training aligned to defined learning requirements.</p></div><div class="card"><h3>Evidence &amp; Sign-off</h3><p>OJT evidence, logbook and sign-off support qualification.</p></div></div>
+<div class="flow"><span>Learning Requirement</span><b>→</b><span>Structured OJT</span><b>→</b><span>Practice</span><b>→</b><span>Observation</span><b>→</b><span>Evidence</span><b>→</b><span>Sign-off</span><b>→</b><span>Qualification</span></div>
+</section>
+
+<section class="section" id="assessment"><div class="eyebrow">13</div><h2>Assessment &amp; Qualification</h2>
+<p>Assessment was connected directly to qualification rather than being treated as a separate academic event.</p>
+<div class="flow"><span>Learn</span><b>→</b><span>Practice</span><b>→</b><span>Demonstrate</span><b>→</b><span>Assess</span><b>→</b><span>Evidence</span><b>→</b><span>Sign-off</span><b>→</b><span>Certification</span></div>
+<p>Qualification was based on <strong>knowledge + skill + behaviour / performance evidence</strong>, followed by qualification-board approval and certification.</p>
+</section>
+
+<section class="section" id="certification"><div class="eyebrow">14</div><h2>Certification &amp; Recertification</h2>
+<div class="grid"><div class="card"><h3>Certification</h3><p>Formal qualification approval and issue of certification.</p></div><div class="card"><h3>Recertification</h3><p>Periodic re-assessment, refresher learning and requalification.</p></div></div>
+<p>Capability was therefore treated as something to be maintained, not permanently achieved after one training event.</p>
+</section>
+
+<section class="section" id="performance"><div class="eyebrow">15</div><h2>Performance Improvement</h2>
+<div class="flow"><span>Learning</span><b>→</b><span>Qualification</span><b>→</b><span>Work Performance</span><b>→</b><span>Measure</span><b>→</b><span>Improve</span><b>→</b><span>Retrain / Refresh</span><b>→</b><span>Reassess</span></div>
+<p>The architecture therefore connects learning with operational performance rather than treating training as an isolated HR activity.</p>
+<div class="confidential"><strong>Performance metric note:</strong> The source framework identifies an operational KPI context including a defined string-yield target. It is presented here as a performance context within the system, not as a claim that the L&amp;D intervention alone caused the result.</div>
+</section>
+
+<section class="section" id="machine-learning"><div class="eyebrow">16</div><h2>Machine-Specific Learning Architecture</h2>
+<p>A particularly strong component was the creation of a Master Training Module for the <strong>Auto Bussing Machine</strong>. The master module acted as the common content foundation from which role-specific learning could be structured.</p>
+<div class="grid"><div class="card"><h3>Basic</h3><p>All relevant personnel.</p></div><div class="card"><h3>Advanced — Production</h3><p>Production operators.</p></div><div class="card"><h3>Maintenance</h3><p>Maintenance technicians.</p></div><div class="card"><h3>Quality Control</h3><p>QC personnel.</p></div></div>
+<p><strong>One controlled knowledge base → multiple role-specific learning journeys.</strong></p>
+</section>
+
+<section class="section" id="progressive-capability"><div class="eyebrow">17</div><h2>Example: Progressive Machine Capability</h2>
+<p>For Production, the architecture progressed from basic machine knowledge toward increasingly complex responsibilities.</p>
+<table><thead><tr><th>Stage</th><th>Capability focus</th></tr></thead><tbody><tr><td>Basic</td><td>Machine overview, safety, components, operating parameters, startup, production, quality, troubleshooting and shutdown.</td></tr><tr><td>Advanced — Level 1</td><td>HMI, recipe management, air-system checks, ribbon installation and machine modes.</td></tr><tr><td>Advanced — Level 2</td><td>Defect analysis, vision-system operation, changeover optimization and data logging/reporting.</td></tr><tr><td>Advanced — Level 3</td><td>Process-window / recipe creation, protection parameters, servo-axis knowledge and trainer competency.</td></tr></tbody></table>
+<p>A similar progressive structure was created for Maintenance and Quality. This is an example of <strong>progressive capability design</strong>.</p>
+</section>
+
+<section class="section" id="content-production"><div class="eyebrow">18</div><h2>Content Production</h2>
+<p>The system required considerably more than writing learner manuals.</p>
+<div class="grid"><div class="card"><h3>Learner Content</h3><p>Learning modules, structured handbook content and LMS material.</p></div><div class="card"><h3>Trainer Enablement</h3><p>Trainer manuals, OJT guidance and assessment guidance.</p></div><div class="card"><h3>Workplace Content</h3><p>SOP-linked learning, OJT instructions, checklists and logbooks.</p></div><div class="card"><h3>Multimedia &amp; Governance</h3><p>Instructional photographs, OJT videos, machine demonstrations, document numbering, hierarchy and version management.</p></div></div>
+</section>
+
+<section class="section" id="content-governance"><div class="eyebrow">19</div><h2>Content Governance</h2>
+<p>The architecture established a repeatable content workflow in which the Master Module acts as the single source of truth.</p>
+<div class="flow"><span>Author</span><b>→</b><span>Master Module</span><b>→</b><span>Department Review</span><b>→</b><span>Classification by Level</span><b>→</b><span>Role-Specific Module</span><b>→</b><span>LMS</span><b>→</b><span>OJT</span><b>→</b><span>Assessment</span><b>→</b><span>Certification</span></div>
+<p>Department heads review and classify content according to role and capability level, after which L&amp;D extracts the relevant modules for deployment. This creates a repeatable content-production model rather than developing every course independently.</p>
+</section>
+
+<section class="section" id="evidence"><div class="eyebrow">Evidence</div><h2>Architecture-Level Evidence</h2>
+<p>Because detailed company training records, assessments and operational documents are confidential, this portfolio presents selected evidence at an architectural level. The artifacts below demonstrate the design of the Learning &amp; Qualification System without disclosing proprietary company documents.</p>
+<div class="figure"><div class="figure-title">Evidence 01 — LQM-001 Architecture &amp; JM-01 Job Matrix</div><a href="assets/lqm-jm01-evidence.png" target="_blank"><img src="assets/lqm-jm01-evidence.png" alt="Solar Manufacturing Learning and Qualification System architecture and JM-01 job matrix"></a><div class="caption">A project artifact showing the end-to-end learning and qualification architecture, job matrix, competency levels, competency categories, roadmap and deliverables.</div></div>
+<div class="figure"><div class="figure-title">Case Study 02 — Portfolio Infographic Map</div><a href="case-study-02-infographic-map.html"><img src="assets/case-study-02-overview.png" alt="Case Study 02 Learning and Qualification System infographic"></a><div class="caption">Overview map of the complete case, from business context and knowledge harvesting through competency architecture, learning paths, OJT, assessment, certification and performance improvement.</div></div>
+<div class="confidential"><strong>Confidentiality:</strong> detailed internal manuals, assessment records, LMS records and certification documents are intentionally not published. The portfolio uses architecture-level evidence to demonstrate the work while respecting organizational confidentiality.</div>
+</section>
+
+<div class="footer">Case Study 02 · Learning &amp; Qualification System · Dr. Chetankumar Patel</div>
+</main></div>
+</body></html>
