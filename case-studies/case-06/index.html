@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Case Study 06 | Professional &amp; Leadership Capability Development</title>
+<meta name="description" content="Case Study 06 — Professional and Leadership Capability Development through experiential, contextual and learner-centred facilitation.">
+<style>
+:root{
+  --navy:#0b315f;--blue:#1466a8;--ink:#18324f;--muted:#5f7287;
+  --bg:#f5f8fc;--line:#d9e3ee;--soft:#edf5ff;--gold:#f2b632;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.page{display:flex;min-height:100vh}
+.sidebar{
+  width:300px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  background:#14213d;
+  color:#fff;
+  padding:30px 22px;
+  overflow-y:auto;
+  flex:0 0 300px;
+}
+.brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.case-title{font-size:22px;line-height:1.25;margin:8px 0 22px}
+.nav-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:20px 0 8px}
+.nav a{
+  display:block;
+  color:#dbe5f5;
+  padding:8px 10px;
+  margin:2px 0;
+  border-left:3px solid transparent;
+  border-radius:0 6px 6px 0;
+  font-size:13px;
+  line-height:1.35;
+}
+.nav a:hover,.nav a.active{
+  background:rgba(255,255,255,.08);
+  border-left-color:#fff;
+  text-decoration:none;
+  color:#fff;
+}
+.back{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.back a{color:#dbe5f5;font-size:12px}
+.main{width:min(1120px,100%);padding:46px 54px 75px}
+@media(max-width:1050px){
+  .sidebar{width:245px;flex-basis:245px}
+  .main{padding:35px 28px 60px}
+}
+@media(max-width:760px){
+  .page{display:block}
+  .sidebar{position:relative;width:100%;height:auto;max-height:none;overflow:visible;padding:22px 18px}
+  .nav a{display:inline-block;margin:2px 3px 2px 0;border-left:0;border-bottom:2px solid transparent;border-radius:6px;padding:7px 9px}
+  .nav a:hover,.nav a.active{border-left:0;border-bottom-color:#fff}
+  .main{width:100%;padding:24px 16px 55px}
+}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.back{font-size:13px;font-weight:700}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#718096}
+.hero{background:linear-gradient(135deg,#082e5b,#145d93);color:#fff;border-radius:18px;padding:36px 40px;margin-bottom:24px}
+.hero .kicker{font-size:13px;color:#ffd34d;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.hero h1{font-size:40px;line-height:1.1;margin:5px 0 10px}
+.hero p{max-width:950px;margin:8px 0;font-size:17px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:5px 10px;border-radius:999px;font-size:11px}
+.infographic,.card,.evidence a,.method-panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 5px 18px rgba(20,50,80,.05)}
+.infographic{padding:12px;margin:0 0 34px}
+.infographic img{width:100%;display:block;border-radius:10px}
+.section{scroll-margin-top:20px;margin:34px 0}
+.section h2{color:var(--navy);font-size:25px;border-bottom:3px solid #e6eef7;padding-bottom:8px;margin-bottom:16px}
+.section h3{color:var(--navy);font-size:18px;margin:20px 0 8px}
+.lead{font-size:17px;color:#435a72}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:20px}
+.card h3{margin:0 0 8px}
+.card p{margin:0}
+.card ul{margin:8px 0;padding-left:20px}
+.callout{background:var(--soft);border-left:5px solid var(--blue);padding:17px 20px;border-radius:0 10px 10px 0;margin:18px 0}
+.gold{background:#fff8df;border-left-color:var(--gold)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:20px 0}
+.flow span{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;font-weight:700}
+.flow b{color:var(--blue);font-size:17px}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:18px 0}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;text-align:center;font-weight:700;font-size:13px}
+.step b{display:block;color:var(--blue);font-size:23px;margin-bottom:4px}
+.method-panel{padding:20px;margin:22px 0;background:#f7faff}
+.method-panel h3{margin:0 0 12px}
+.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.method{background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:12px}
+.method strong{display:block;font-size:13px;color:var(--navy)}
+.method span{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.45}
+.evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.evidence a{display:block;padding:18px;color:inherit}
+.evidence strong{display:block;color:var(--navy);margin-bottom:5px}
+.evidence small{display:block;color:#66788b;line-height:1.5}
+.note{background:#fff8e7;border:1px solid #e8d6a1;border-radius:12px;padding:17px 19px;color:#66531d;font-size:13px;margin-top:18px}
+.quote{border-left:5px solid var(--gold);background:#fff8df;padding:18px 22px;border-radius:10px;font-size:19px;font-weight:650}
+.footer{margin-top:45px;padding:20px 0;border-top:1px solid var(--line);color:#718096;font-size:12px;text-align:center}
+@media(max-width:850px){
+  .main{padding:20px 16px 55px}.hero{padding:28px 24px}.hero h1{font-size:31px}
+  .grid,.evidence,.method-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<aside class="sidebar">
+  <div class="brand">Case Study 06</div>
+  <h2 class="case-title">Professional &amp; Leadership Capability Development</h2>
+
+  <div class="nav-label">Case navigation</div>
+  <nav class="nav">
+    <a href="#challenge" class="active">The Capability Challenge</a>
+    <a href="#silver">Silver Consumer Electricals</a>
+    <a href="#experiential">Experiential Workplace Learning</a>
+    <a href="#adaptation">Contextual Adaptation</a>
+    <a href="#sarangpur">Sarangpur Development Shibir</a>
+    <a href="#other-training">Other Training Engagements</a>
+    <a href="#facilitation">Facilitation Model</a>
+    <a href="#demonstrates">What This Case Demonstrates</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#takeaway">Portfolio Takeaway</a>
+    <a href="case-study-06-infographic-map.html">InfoGraphic Map</a>
+  </nav>
+
+  <div class="back">
+    <a href="index.html">← Back to Case Overview</a>
+  </div>
+</aside>
+
+<main class="main">
+<div class="topbar"><span class="label">Case Study 06</span></div>
+
+<header class="hero">
+<div class="kicker">Leadership Development · Communication · Teamwork · Behavioural Learning · Facilitation</div>
+<h1>Professional &amp; Leadership Capability Development</h1>
+<p>Designing and facilitating experiential learning for diverse workforce contexts — converting communication, teamwork, professionalism, discipline and leadership concepts into behaviours learners can practise and apply.</p>
+<div class="tags">
+<span class="tag">Leadership Development</span><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Workplace Behaviour</span><span class="tag">Professionalism</span><span class="tag">Experiential Learning</span><span class="tag">Contextual Adaptation</span><span class="tag">Facilitation</span>
+</div>
+</header>
+
+<div class="infographic">
+<a href="assets/case-study-06-infographic.png" target="_blank">
+<img src="assets/case-study-06-infographic.png" alt="Case Study 06 infographic — Professional and Leadership Capability Development">
+</a>
+</div>
+
+<section class="section">
+<h2 id="challenge">01. The Capability Challenge</h2>
+<p class="lead">My corporate L&amp;D experience extends beyond technical and academic learning into human, behavioural and leadership capability development.</p>
+<p>I have designed and facilitated learning interventions for employees, trainees, volunteers and leaders across very different environments. The recurring challenge was to turn concepts such as communication, teamwork, discipline, professionalism and leadership into behaviours that people can actually practise.</p>
+<div class="callout"><strong>Design principle:</strong> experiential rather than lecture-dominated learning — learners participate, practise, reflect and connect the experience to real behaviour.</div>
+</section>
+
+<section class="section">
+<h2 id="silver">02. Silver Consumer Electricals Limited</h2>
+<p><strong>Corporate capability development across a large manufacturing environment.</strong> Silver Consumer Electricals Limited operates a vertically integrated manufacturing campus comprising 9 plants and approximately 4,000 employees. Within this environment, I conducted 5+ workshops involving approximately 300 employees across multiple organisational levels and plants.</p>
+<div class="grid">
+<div class="card"><h3>Capability areas</h3><ul>
+<li>Leadership</li><li>Communication</li><li>Teamwork</li><li>Workplace behaviour</li><li>Professionalism</li><li>Discipline</li><li>Positive work attitude</li><li>Role and responsibility</li>
+</ul></div>
+<div class="card"><h3>Context-driven delivery</h3><p>The interventions were adapted according to the learner population and operational context rather than delivered as a fixed programme.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 id="experiential">03. Experiential Workplace Learning</h2>
+<p>A representative workplace-capability programme followed the learning cycle:</p>
+<div class="flow"><span>Theory / Concept</span><b>→</b><span>Activity</span><b>→</b><span>Reflection</span><b>→</b><span>Workplace Application</span></div>
+<div class="grid">
+<div class="card"><h3>Communication</h3><ul><li>Broken Message Chain</li><li>Listen &amp; Draw</li><li>Roleplay</li></ul></div>
+<div class="card"><h3>Teamwork</h3><ul><li>Blindfold Challenge</li><li>Balloon Walk</li><li>Tower Building</li></ul></div>
+<div class="card"><h3>Professional Behaviour</h3><ul><li>Ethical dilemmas</li><li>Behaviour roleplays</li><li>Accountability practices</li></ul></div>
+<div class="card"><h3>Attitude &amp; Discipline</h3><ul><li>Attitude scenarios</li><li>Discipline activities</li><li>Resilience activities</li></ul></div>
+</div>
+<p>The emphasis was on participation and practice rather than prolonged theoretical presentation.</p>
+</section>
+
+<section class="section">
+<h2 id="adaptation">04. Contextual Adaptation</h2>
+<div class="grid">
+<div class="card"><h3>Solar Plant</h3><p>The core learning objectives were retained, while training duration was reduced, the number of activities/games was reduced, and activities were selected according to the operational context after close liaison with the Plant Head.</p></div>
+<div class="card"><h3>Employee Onboarding</h3><p>The same fundamental capability areas were adapted for new employees: communication, teamwork, professional behaviour, discipline, and roles and responsibilities.</p></div>
+</div>
+<div class="quote">Same learning objective → different learner context → different instructional treatment.</div>
+</section>
+
+<section class="section">
+<h2 id="sarangpur">05. Sarangpur Temple — Vyaktigat Vikas Shibir</h2>
+<p><strong>Professionalism, leadership and seva culture.</strong> A different capability-development intervention was conducted at Shri Kashtabhanjan Dev Hanumanji Mandir, Sarangpur. The programme, <em>Vyaktigat Vikas Shibir</em>, was a two-day intensive personal-development workshop for approximately 300 temple sevaks across batches.</p>
+<div class="grid">
+<div class="card"><h3>Core learning areas</h3><ul>
+<li>Body language and discipline</li><li>Manager vs. Leader</li><li>Comfort Zone → Growth Zone</li><li>Good Follower → Leader</li><li>Courage, humility and seva-bhav</li><li>Reframing work as seva/service</li>
+</ul></div>
+<div class="card"><h3>Experiential approach</h3><p>Activities such as Balloon Coordination Walk and Blindfold Zig-Zag Navigation were used to develop teamwork, coordination, trust, communication and leadership responsibility.</p></div>
+</div>
+<div class="callout gold"><strong>Contextual adaptation:</strong> conceptual clarity + reflective questioning + experiential activities + spiritual anchoring, while respecting the cultural context of the volunteer environment.</div>
+</section>
+
+<section class="section">
+<h2 id="other-training">06. Other Professional Training Engagements</h2>
+<p>Additional professional training experience includes engagements through Find Me Factory and other corporate training/consulting contexts, covering:</p>
+<div class="grid">
+<div class="card"><h3>Behavioural capability</h3><p>Communication skills, teamwork and collaboration, workplace behaviour and professional development.</p></div>
+<div class="card"><h3>Leadership-oriented learning</h3><p>Leadership-oriented workshops and interventions adapted to the needs of the learner population and client context.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 id="facilitation">07. My Facilitation Model</h2>
+<div class="process">
+<div class="step"><b>01</b>Explain</div>
+<div class="step"><b>02</b>Demonstrate</div>
+<div class="step"><b>03</b>Engage</div>
+<div class="step"><b>04</b>Practise</div>
+<div class="step"><b>05</b>Reflect</div>
+<div class="step"><b>06</b>Connect to Workplace</div>
+</div>
+<p>The specific activity changes according to the audience, but the underlying principle remains: people are more likely to internalise a behavioural capability when they experience and practise it rather than only hear about it.</p>
+</section>
+
+<div class="method-panel">
+<h3>Relevant L&amp;D / Instructional Design Methodologies Evidenced in the Work</h3>
+<div class="method-grid">
+<div class="method"><strong>Experiential Learning</strong><span>Concepts are converted into activities, practice, reflection and application.</span></div>
+<div class="method"><strong>Activity-Based Learning</strong><span>Games, challenges and structured activities are used as the learning vehicle.</span></div>
+<div class="method"><strong>Scenario-Based Learning</strong><span>Workplace situations, ethical dilemmas and behaviour scenarios support contextual practice.</span></div>
+<div class="method"><strong>Reflective Learning</strong><span>Discussion and reflection connect activity experience with behavioural insight.</span></div>
+<div class="method"><strong>Behavioural Learning</strong><span>Abstract capabilities are translated into observable behaviours and workplace practice.</span></div>
+<div class="method"><strong>Learner-Centred Design</strong><span>Delivery changes according to learner population, readiness and context.</span></div>
+<div class="method"><strong>Contextualised Learning</strong><span>Objectives are retained while duration, depth and activity selection are adapted to the operating environment.</span></div>
+<div class="method"><strong>Transfer of Learning</strong><span>Learning is explicitly connected to workplace application rather than ending with the activity.</span></div>
+<div class="method"><strong>Facilitation &amp; Guided Practice</strong><span>The facilitator structures participation, practice, questioning and reflection.</span></div>
+<div class="method"><strong>Values-Based Learning</strong><span>The Sarangpur programme integrates capability development with values, purpose and seva culture.</span></div>
+<div class="method"><strong>Stakeholder Alignment</strong><span>Programme treatment is adjusted through dialogue with operational stakeholders, including plant leadership.</span></div>
+<div class="method"><strong>Multi-Level Learning Design</strong><span>Approaches are applied across employees, trainees, volunteers and leadership-positioned learners.</span></div>
+</div>
+</div>
+
+<section class="section">
+<h2 id="demonstrates">08. What This Case Demonstrates</h2>
+<div class="grid">
+<div class="card"><h3>Experiential Facilitation</h3><p>Using activities, games, scenarios, roleplays and reflection to create active learning.</p></div>
+<div class="card"><h3>Behavioural Learning</h3><p>Converting leadership, communication and professionalism into observable practice.</p></div>
+<div class="card"><h3>Contextual Adaptation</h3><p>Adjusting duration, depth, activity selection and facilitation according to learner and operating environment.</p></div>
+<div class="card"><h3>Multi-Level Facilitation</h3><p>Working with trainees, employees, volunteers and leadership-positioned employees.</p></div>
+<div class="card"><h3>Stakeholder Alignment</h3><p>Working with organisational stakeholders to adapt interventions to operational requirements.</p></div>
+<div class="card"><h3>Cross-Context Learning Design</h3><p>Applying L&amp;D principles across manufacturing, corporate, onboarding, consulting and volunteer environments.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 id="evidence">09. Evidence Library</h2>
+<p>The following supplied artefacts are included as downloadable portfolio evidence. Additional corporate materials such as workshop reports, presentation decks, participant materials and institutional records may be subject to confidentiality and are therefore not reproduced here.</p>
+<div class="evidence">
+<a href="assets/evidence/Vyaktigat_Vikas_Shibir_Report_Sarangpur.pdf" download>
+<strong>Vyaktigat Vikas Shibir — Workshop Report</strong>
+<small>Documents the Sarangpur two-day personal-development workshop, participant scale, learning areas and facilitation approach.</small>
+</a>
+<a href="assets/evidence/Teamwork and collaboration.pdf" download>
+<strong>Teamwork &amp; Collaboration Learning Material</strong>
+<small>Corporate L&amp;D material covering trust, leadership, communication and teamwork activities.</small>
+</a>
+<a href="assets/evidence/games1.jpeg" download>
+<strong>Experiential Activity Photograph</strong>
+<small>Visual evidence of facilitated experiential learning and group participation.</small>
+</a>
+<a href="assets/CASE-STUDY-06-SOURCE.docx" download>
+<strong>Case Study 06 Source Document</strong>
+<small>Approved source narrative used to build this portfolio case.</small>
+</a>
+</div>
+<div class="note"><strong>Evidence availability note:</strong> Further supporting artefacts may include training reports, presentation decks, activity designs, participant materials, photographs/videos and feedback/evaluation evidence. Where organisational or institutional confidentiality applies, detailed materials can be produced for professional review upon request, subject to permission.</div>
+</section>
+
+<section class="section">
+<h2 id="takeaway">10. Portfolio Takeaway</h2>
+<p class="lead">I design behavioural learning as an experience, not a presentation.</p>
+<p>My professional training work has involved very different learners and environments — from manufacturing employees and new joiners to plant teams, leaders and temple sevaks. I adapt the depth, language, activities, duration and facilitation approach to the learner and context while retaining the intended capability outcome.</p>
+<div class="flow"><span>Awareness</span><b>→</b><span>Practice</span><b>→</b><span>Reflection</span><b>→</b><span>Workplace Behaviour</span></div>
+<p>This case complements the earlier instructional-design and learning-system cases by demonstrating the human and behavioural side of my L&amp;D practice.</p>
+</section>
+
+<div class="footer">Case Study 06 · Professional &amp; Leadership Capability Development · Portfolio resource</div>
+</main>
+</div>
+</body>
+</html>
