@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Design & Development | Dr. Chetankumar Patel</title>
+<meta name="description" content="Product Design & Development case study — from real-world problems to products, IP and commercialisation.">
+<style>
+:root{
+  --bg:#f7f8fa;
+  --surface:#ffffff;
+  --ink:#172033;
+  --muted:#5f6b7a;
+  --line:#dfe4ea;
+  --accent:#2457a6;
+  --accent-soft:#eaf1fb;
+  --dark:#14213d;
+  --shadow:0 10px 30px rgba(20,33,61,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.7;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.page{display:flex;min-height:100vh}
+.sidebar{
+  width:285px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  background:var(--dark);
+  color:#fff;
+  padding:34px 24px;
+  overflow-y:auto;
+}
+.brand{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:8px}
+.case-title{font-size:24px;line-height:1.25;margin:0 0 28px}
+.nav-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:24px 0 10px}
+.nav a{
+  display:block;
+  color:#dbe5f5;
+  padding:11px 13px;
+  margin:4px 0;
+  border-left:3px solid transparent;
+  border-radius:0 7px 7px 0;
+  font-size:14px;
+}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);border-left-color:#fff;text-decoration:none;color:#fff}
+.back{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.back a{color:#dbe5f5;font-size:13px}
+.main{width:min(1100px,100%);padding:48px 58px 80px}
+.hero{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:42px 44px;
+  box-shadow:var(--shadow);
+  margin-bottom:30px;
+}
+.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:42px;line-height:1.12;margin:10px 0 14px}
+h2{font-size:30px;line-height:1.2;margin:0 0 16px}
+h3{font-size:20px;margin:28px 0 10px}
+.lead{font-size:19px;color:var(--muted);max-width:850px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.tag{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#fbfcfe;font-size:12px;color:var(--muted)}
+.section{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:38px 42px;
+  margin-bottom:26px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:25px;
+}
+.section-intro{color:var(--muted);max-width:850px}
+.callout{
+  background:var(--accent-soft);
+  border-left:4px solid var(--accent);
+  padding:18px 20px;
+  margin:24px 0;
+  border-radius:0 10px 10px 0;
+}
+.method-panel{
+  margin:26px 0;
+  border:1px solid #cbd8ea;
+  border-radius:14px;
+  background:#f7faff;
+  padding:22px;
+}
+.method-panel .method-label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:800;
+  margin-bottom:12px;
+}
+.method-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.method{
+  background:#fff;
+  border:1px solid #d8e2ef;
+  border-radius:10px;
+  padding:13px 14px;
+}
+.method strong{display:block;font-size:14px;margin-bottom:3px}
+.method span{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+.method-note{margin:14px 0 0;color:var(--muted);font-size:12px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.badge{
+  background:var(--accent-soft);
+  border:1px solid #cbd8ea;
+  color:var(--accent);
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+.card{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  background:#fcfdff;
+}
+.card h3{margin:0 0 7px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.flow{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  margin:25px 0;
+}
+.flow span{
+  background:#f4f6f9;border:1px solid var(--line);
+  border-radius:8px;padding:9px 12px;font-size:13px;font-weight:600;
+}
+.flow b{color:var(--accent);font-size:18px}
+.timeline{border-left:2px solid var(--line);margin:25px 0 10px;padding-left:25px}
+.step{position:relative;margin:0 0 24px}
+.step:before{
+  content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;
+  background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--line);
+}
+.step strong{display:block;font-size:15px}
+.step span{display:block;color:var(--muted);font-size:14px}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f4f6f9;font-weight:700}
+.evidence{
+  border:1px dashed #aeb8c6;
+  border-radius:12px;
+  padding:18px;
+  background:#fafbfc;
+  margin:18px 0;
+}
+.evidence strong{display:block;margin-bottom:4px}
+.evidence small{color:var(--muted)}
+.figure{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  background:#fbfcfe;
+  margin:24px 0;
+}
+.figure-title{font-weight:700;font-size:14px;margin-bottom:12px}
+.caption{font-size:12px;color:var(--muted);margin-top:10px}
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.metric{background:var(--dark);color:#fff;border-radius:12px;padding:18px}
+.metric .n{font-size:27px;font-weight:750;display:block}
+.metric .l{font-size:11px;opacity:.75}
+.quote{font-size:23px;line-height:1.45;font-weight:650;padding:10px 0}
+.footer{
+  text-align:center;color:var(--muted);font-size:12px;margin-top:35px;
+}
+@media(max-width:900px){
+  .page{display:block}
+  .sidebar{position:relative;width:100%;height:auto;padding:22px}
+  .nav{display:flex;flex-wrap:wrap;gap:4px}
+  .nav a{margin:0}
+  .back{margin-top:14px}
+  .main{padding:28px 18px 55px}
+  .hero,.section{padding:28px 22px}
+  h1{font-size:34px}
+  .grid{grid-template-columns:1fr}
+  .metric-grid{grid-template-columns:repeat(2,1fr)}
+  .method-grid{grid-template-columns:1fr}.addie{grid-template-columns:1fr 1fr}.download-list{grid-template-columns:1fr}
+}
+.addie{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:22px 0}.addie-step{background:var(--dark);color:#fff;border-radius:10px;padding:14px 10px;text-align:center}.addie-step strong{display:block;font-size:16px}.addie-step span{display:block;font-size:10px;opacity:.75;margin-top:3px}.download-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.download-card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}.download-card a{font-weight:750}.download-card small{display:block;color:var(--muted);margin-top:5px;font-size:12px}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<aside class="sidebar">
+  <div class="brand">Case Study 01</div>
+  <h2 class="case-title">Product Design &amp; Development</h2>
+
+  <div class="nav-label">Case navigation</div>
+  <nav class="nav">
+    <a href="#challenge" class="active">The Challenge</a>
+    <a href="#learning-journey">Learning Journey</a>
+    <a href="#representative-innovation">Representative Innovation</a>
+    <a href="#scale-of-innovation">Scale of Innovation</a>
+    <a href="#prototype-to-product">From Prototype to Product</a>
+    <a href="#evidence">Evidence</a>
+    <a href="infographic-map.html">InfoGraphic Map</a>
+  </nav>
+
+  <div class="back">
+    <!-- Replace this URL with the existing Level-3 case overview page. -->
+    <a href="index.html">← Back to Case Overview</a>
+  </div>
+</aside>
+
+<main class="main">
+
+<section class="hero">
+  <div class="eyebrow">Product Design &amp; Development</div>
+  <h1>From Real-World Problems to Products, IP and Commercialisation</h1>
+  <p class="lead">
+    A two-semester product design learning experience designed to move mechanical
+    engineering learners from subject knowledge to problem solving, product creation,
+    testing and measurable real-world outcomes.
+  </p>
+  <div class="meta">
+    <span class="tag">Learning Experience Design</span>
+    <span class="tag">Experiential Learning</span>
+    <span class="tag">Design Thinking</span>
+    <span class="tag">Product Development</span>
+    <span class="tag">Innovation</span>
+    <span class="tag">Project-Based Assessment</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="eyebrow">Learning &amp; Instructional Design Lens</div>
+  <h2>Methods Applied in This Case</h2>
+  <p class="section-intro">
+    This case is presented primarily as a <strong>Learning &amp; Development and
+    Instructional Design</strong> example. The engineering subject matter is the
+    context; the professional capability demonstrated is the design of a learning
+    experience that moves learners from need identification to application,
+    evidence and real-world outcomes.
+  </p>
+
+  <div class="method-panel">
+    <div class="method-label">Core methods evidenced in the case</div>
+    <div class="method-grid">
+      <div class="method"><strong>Design Thinking</strong><span>Empathize → Define → Ideate → Prototype → Test.</span></div>
+      <div class="method"><strong>Experiential Learning</strong><span>Learning through doing, reflection, application and iteration.</span></div>
+      <div class="method"><strong>Problem-Based Learning</strong><span>Real-world problems drive investigation, solution development and learning.</span></div>
+      <div class="method"><strong>Project-Based Learning</strong><span>Projects provide the vehicle for sustained application and evidence.</span></div>
+      <div class="method"><strong>Authentic Assessment</strong><span>Capability demonstrated through actual work rather than only written recall.</span></div>
+      <div class="method"><strong>Performance / Demonstration</strong><span>Learners demonstrate what they can produce, test, communicate and defend.</span></div>
+      <div class="method"><strong>Bloom-Aligned Progression</strong><span>Assessment moves from understanding and application toward analysis, evaluation and creation.</span></div>
+      <div class="method"><strong>Interdisciplinary Learning</strong><span>Different domains collaborate around a shared real-world problem.</span></div>
+      <div class="method"><strong>Coaching &amp; Guided Practice</strong><span>Learners own ideas while the facilitator provides technical guidance and constructive challenge.</span></div>
+    </div>
+    <p class="method-note">
+      These labels are used where the case documentation explicitly describes the
+      corresponding practice. The wider L&amp;D reference distinguishes instructional
+      design models, learning theories, workplace learning approaches, assessment
+      models and instructional techniques as different layers rather than competing
+      methodologies. fileciteturn2file0L2-L9
+    </p>
+  </div>
+
+  <div class="callout">
+    <strong>L&amp;D positioning</strong><br>
+    <strong>Diagnose learner context → define capability → design the learning journey
+    → engage learners through authentic problems and projects → assess observable
+    performance → capture evidence → connect learning to outcomes.</strong>
+  </div>
+</section>
+
+<section class="section"><div class="eyebrow">Overall Instructional Design Framework</div><h2>ADDIE as the Underlying Design Architecture</h2><p class="section-intro">The overall learning experience was designed and refined using the <strong>ADDIE framework — Analysis, Design, Development, Implementation and Evaluation</strong>. ADDIE provided the underlying structure for the learning experience; the methods below were selected and combined within that structure to make learning practical, engaging and outcome-focused.</p><div class="addie"><div class="addie-step"><strong>A</strong><span>Analysis</span></div><div class="addie-step"><strong>D</strong><span>Design</span></div><div class="addie-step"><strong>D</strong><span>Development</span></div><div class="addie-step"><strong>I</strong><span>Implementation</span></div><div class="addie-step"><strong>E</strong><span>Evaluation</span></div></div><p>In practice, this meant understanding the learners and capability requirements, structuring the learning journey and outcomes, developing activities and resources, facilitating the experience through projects and hands-on work, and evaluating learning through observable performance, artifacts, testing and outcomes. The case therefore demonstrates <strong>instructional design as a complete learning system</strong>, not simply delivery of technical content.</p></section>
+
+<section id="challenge" class="section">
+  <div class="eyebrow">01</div>
+  <h2>The Challenge</h2>
+  <div class="badges">
+    <span class="badge">Learner Analysis</span>
+    <span class="badge">Capability Gap Analysis</span>
+    <span class="badge">Outcome-Oriented Design</span>
+  </div>
+  <p class="section-intro">
+    The challenge was not simply to teach another engineering subject. It was to
+    help learners integrate knowledge from multiple disciplines and use it to
+    solve unfamiliar, real-world problems.
+  </p>
+
+  <div class="callout">
+    <strong>The core learning challenge</strong><br>
+    How do we help learners integrate existing knowledge and use it to solve an
+    unfamiliar, real-world problem?
+  </div>
+
+  <h3>Starting point</h3>
+  <p>
+    The primary learners were Mechanical Engineering students in Semesters 5 and 6,
+    approximately 30 learners per batch. They already had foundations in
+    manufacturing processes, CAD, material science, metrology, thermal engineering,
+    thermodynamics, fluid mechanics, solid mechanics, machine drawing and drafting,
+    machine design, and theory and kinematics of machines.
+  </p>
+
+  <h3>The capability gap</h3>
+  <p>
+    Learners possessed considerable subject knowledge, but advanced product-design
+    thinking and integrated product development had not yet been sufficiently
+    developed. The design problem therefore became one of integration: moving from
+    separate bodies of knowledge toward a coherent process for identifying a need,
+    defining a problem, creating a solution and demonstrating that the solution
+    could work.
+  </p>
+
+  <div class="figure">
+    <div class="figure-title">From knowledge to real-world outcome</div>
+    <div class="flow">
+      <span>Knowledge</span><b>→</b>
+      <span>Creative Thinking</span><b>→</b>
+      <span>Problem Solving</span><b>→</b>
+      <span>Design</span><b>→</b>
+      <span>Prototype</span><b>→</b>
+      <span>Testing</span><b>→</b>
+      <span>Real-World Outcome</span>
+    </div>
+    <div class="caption">
+      The learning experience was designed around an integrated problem-to-product journey.
+    </div>
+  </div>
+
+  <h3>Why a different learning experience was needed</h3>
+  <p>
+    Rather than treating Product Design as another theory-based subject, the
+    experience was designed so that learners would move from identifying a real
+    need to developing, testing and communicating a potential solution. The
+    intended measure of learning was not simply whether a learner could explain
+    a concept, but whether the learner could create something meaningful from it.
+  </p>
+
+  <div class="evidence">
+    <strong>Suggested evidence for this section</strong>
+    <small>
+      Curriculum/course document · learning outcomes · original course structure ·
+      project brief · assessment scheme · photographs showing learners working on
+      projects.
+    </small>
+  </div>
+</section>
+
+<section id="learning-journey" class="section">
+  <div class="eyebrow">02</div>
+  <h2>Learning Journey</h2>
+  <div class="badges">
+    <span class="badge">Design Thinking</span>
+    <span class="badge">Experiential Learning</span>
+    <span class="badge">Problem-Based Learning</span>
+    <span class="badge">Project-Based Learning</span>
+    <span class="badge">Interdisciplinary Learning</span>
+  </div>
+  <p class="section-intro">
+    I designed the experience as a two-semester journey rather than treating
+    product development as a single project at the end of a course.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Semester 1 — Discover, Define &amp; Design</h3>
+      <p>
+        Learners explored users and problems, defined the opportunity, generated
+        concepts, developed designs and moved toward an initial physical representation.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Semester 2 — Develop, Test &amp; Commercialise</h3>
+      <p>
+        Learners progressed from early concepts toward more sophisticated prototypes,
+        testing, refinement and consideration of the product's business potential.
+      </p>
+    </div>
+  </div>
+
+  <div class="figure">
+    <div class="figure-title">Overall problem-to-product journey</div>
+    <div class="flow">
+      <span>Real-World Problem</span><b>→</b>
+      <span>Empathize</span><b>→</b>
+      <span>Define</span><b>→</b>
+      <span>Ideate</span><b>→</b>
+      <span>Product Design</span><b>→</b>
+      <span>CAD</span><b>→</b>
+      <span>Prototyping</span><b>→</b>
+      <span>Testing</span><b>→</b>
+      <span>Refinement</span><b>→</b>
+      <span>Business Setup</span><b>→</b>
+      <span>Product / IP / Research / Industry / Commercialisation</span>
+    </div>
+  </div>
+
+  <h3>Learning-by-doing architecture</h3>
+  <p>
+    The instructional approach was intentionally experiential, problem-based and
+    project-based. Learners were required to investigate problems, understand
+    users, formulate problem statements, generate ideas, communicate ideas
+    visually, build representations, test assumptions, refine solutions, present
+    and defend their thinking, and consider product and business potential.
+  </p>
+
+  <h3>Assessment as evidence of capability</h3>
+  <p>
+    A significant design decision was to move away from relying primarily on
+    conventional 2–3 hour written examinations. Project-based and problem-based
+    assessment allowed learners to demonstrate capability through actual work.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Observable learner evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>User / Need</td><td>User interaction and understanding of needs</td></tr>
+      <tr><td>Empathize / Define</td><td>Problem statement and conclusions from user interaction</td></tr>
+      <tr><td>Ideate &amp; Sketch</td><td>Ideas, sketches and concept generation</td></tr>
+      <tr><td>Prototype</td><td>Physical representations and prototype development</td></tr>
+      <tr><td>CAD / Real Model</td><td>Digital design and physical model</td></tr>
+      <tr><td>Presentation</td><td>Communication and defence of the proposed solution</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Evidence of learning</h3>
+  <p>
+    The learning experience generated a substantial body of learner evidence:
+    presentations, project reports, ideation exercises, sketches, CAD outputs,
+    prototype photographs, testing documentation, assessment rubrics, project
+    submissions, final presentations and product-development records.
+  </p>
+
+  <div class="evidence">
+    <strong>Suggested evidence gallery</strong>
+    <small>
+      Insert selected learner ideation sheets, sketches, CAD screenshots, prototype
+      photographs, project reports, assessment rubrics and final presentations.
+      Use captions to explain what each artifact demonstrates.
+    </small>
+  </div>
+
+  <div class="callout">
+    <strong>Learning philosophy</strong><br>
+    I transform learning through engagement and experiential learning, using
+    diverse instructional design methods and strategies to make learning
+    meaningful, practical and enjoyable.
+  </div>
+</section>
+
+<section id="representative-innovation" class="section">
+  <div class="eyebrow">03</div>
+  <h2>Representative Innovation</h2>
+  <div class="badges">
+    <span class="badge">Challenge-Based Learning</span>
+    <span class="badge">Experiential Learning</span>
+    <span class="badge">Coaching &amp; Guided Practice</span>
+    <span class="badge">Authentic Application</span>
+  </div>
+  <p class="section-intro">
+    The strongest illustration of the learning-to-innovation model is the
+    interdisciplinary Spine Mobilization Device project, which progressed from
+    a learner-originated concept to product development, testing, IP, funding,
+    manufacturing and commercialisation.
+  </p>
+
+  <h3>Flagship example — Spine Mobilization Device</h3>
+  <p>
+    The project emerged from collaboration between Mechanical Engineering and
+    Physiotherapy. The problem explored was whether an ergonomically designed
+    device could assist spinal mobilization while reducing dependence on repetitive
+    thumb and hand use by physiotherapists.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Learner-originated solution</h3>
+      <p>
+        The learner team developed the initial concept. My role was to help
+        transform the concept into a technically feasible and manufacturable product.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Interdisciplinary development</h3>
+      <p>
+        Mechanical Engineering contributed design, CAD, materials, prototyping and
+        manufacturing expertise; Physiotherapy contributed user need, clinical
+        context, application and testing.
+      </p>
+    </div>
+  </div>
+
+  <h3>Product development journey</h3>
+  <div class="timeline">
+    <div class="step"><strong>Feasibility check</strong><span>Initial technical review of the concept.</span></div>
+    <div class="step"><strong>Concept refinement</strong><span>Development of the concept toward a feasible product.</span></div>
+    <div class="step"><strong>Engineering drawing</strong><span>2D engineering definition of the design.</span></div>
+    <div class="step"><strong>Paper prototype</strong><span>Early physical representation.</span></div>
+    <div class="step"><strong>Product design &amp; CAD prototype</strong><span>Detailed design and digital development.</span></div>
+    <div class="step"><strong>3D-printed prototype</strong><span>Physical iteration for evaluation and refinement.</span></div>
+    <div class="step"><strong>Trials</strong><span>Use and measurement of the developed device.</span></div>
+    <div class="step"><strong>Final engineering drawings</strong><span>Engineering definition for production.</span></div>
+    <div class="step"><strong>Actual production</strong><span>Transition from prototype toward manufactured product.</span></div>
+    <div class="step"><strong>Packaging &amp; selling</strong><span>Progression toward commercialisation.</span></div>
+  </div>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="n">28 Feb 2022</span><span class="l">Development starting point documented</span></div>
+    <div class="metric"><span class="n">17 Feb 2023</span><span class="l">Prototype pitch at i-Hub</span></div>
+    <div class="metric"><span class="n">₹3.45 lakh</span><span class="l">Innovation grant secured</span></div>
+    <div class="metric"><span class="n">~6 months</span><span class="l">Further manufacturing development</span></div>
+  </div>
+
+  <h3>Testing and evidence</h3>
+  <p>
+    The project progressed beyond prototype creation into trials and measurement.
+    The pitch documentation records CAD development, physical prototypes, use of
+    the device, spinal movement measurements, statistical analysis, product
+    advantages, business model, IP position and team composition.
+  </p>
+
+  <div class="figure">
+    <div class="figure-title">Learning-to-innovation model</div>
+    <div class="flow">
+      <span>Real-World Need</span><b>→</b>
+      <span>Learner Empathy</span><b>→</b>
+      <span>Problem Definition</span><b>→</b>
+      <span>Ideation</span><b>→</b>
+      <span>Design Development</span><b>→</b>
+      <span>Prototyping</span><b>→</b>
+      <span>Testing &amp; Evidence</span><b>→</b>
+      <span>Refinement</span><b>→</b>
+      <span>IP / Research / Project</span><b>→</b>
+      <span>Product / Industry</span><b>→</b>
+      <span>Commercialisation</span>
+    </div>
+  </div>
+
+  <h3>Evidence of the wider Product Design ecosystem</h3>
+  <table>
+    <thead>
+      <tr><th>Outcome area</th><th>Documented evidence</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Intellectual property</td><td>16 granted patents; 3 additional attempts not granted; 4 further patents in drafting</td></tr>
+      <tr><td>Student work</td><td>Numerous student major projects</td></tr>
+      <tr><td>Research</td><td>Interdisciplinary research, PhD research and research publications connected to product work</td></tr>
+      <tr><td>Collaboration</td><td>Interdisciplinary projects with Physiotherapy</td></tr>
+      <tr><td>Innovation</td><td>Innovation funding and projects progressing toward commercialisation</td></tr>
+    </tbody>
+  </table>
+
+  <p class="quote">
+    “The classroom is not the endpoint of learning. It can be the starting point
+    for creating something useful in the real world.”
+  </p>
+
+  <div class="evidence">
+    <strong>Suggested flagship evidence gallery</strong>
+    <small>
+      Initial concept · 2D engineering drawing · CAD development · 3D-printed
+      prototype · physical prototype · testing photographs/data · pitch deck
+      extracts · patent documentation · grant documentation · final product ·
+      packaging/commercial product.
+    </small>
+  </div>
+
+  <h3>What this case demonstrates</h3>
+  <div class="grid">
+    <div class="card"><h3>Learning experience design</h3><p>Designing a structured, multi-stage learning journey rather than isolated sessions.</p></div>
+    <div class="card"><h3>Experiential learning</h3><p>Using real problems, projects, prototyping and testing as learning experiences.</p></div>
+    <div class="card"><h3>Authentic assessment</h3><p>Evaluating what learners can do through observable work and evidence.</p></div>
+    <div class="card"><h3>Interdisciplinary facilitation</h3><p>Connecting different domains around a shared real-world problem.</p></div>
+    <div class="card"><h3>Technical product development</h3><p>Supporting feasibility, engineering design, CAD, prototyping, trials and manufacturing.</p></div>
+    <div class="card"><h3>Learning-to-outcome connection</h3><p>Creating pathways from learning activity to project, IP, research, industry and commercialisation.</p></div>
+  </div>
+</section>
+
+
+<section id="scale-of-innovation" class="section">
+  <div class="eyebrow">04</div>
+  <h2>Scale of Innovation</h2>
+  <div class="badges">
+    <span class="badge">Outcome-Based Learning</span>
+    <span class="badge">Evidence-Based Learning</span>
+    <span class="badge">Learning-to-Outcome Design</span>
+  </div>
+  <p class="section-intro">
+    The Product Design experience was designed as an ecosystem in which learner
+    projects could progress beyond classroom assessment into intellectual property,
+    research, interdisciplinary collaboration, funded innovation and potential
+    commercialisation.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric"><span class="n">16</span><span class="l">Granted patents</span></div>
+    <div class="metric"><span class="n">3</span><span class="l">Additional patent attempts not granted</span></div>
+    <div class="metric"><span class="n">4</span><span class="l">Further patents in drafting</span></div>
+    <div class="metric"><span class="n">₹3.45 lakh</span><span class="l">Innovation grant for further development</span></div>
+  </div>
+
+  <p>
+    These figures represent outcomes of the broader Product Design ecosystem,
+    rather than a claim that every individual learner project became a patent.
+    The ecosystem also generated numerous student major projects, interdisciplinary
+    research projects, PhD research connected to product development, research
+    publications, projects with Physiotherapy, and innovations progressing toward
+    commercialisation.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Innovation pathway</th>
+        <th>Documented outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Student projects</td><td>Numerous major projects developed through the product-design learning environment.</td></tr>
+      <tr><td>Intellectual property</td><td>16 granted patents, with additional attempts and patents in drafting.</td></tr>
+      <tr><td>Research</td><td>Interdisciplinary research, PhD research and publications connected to product development.</td></tr>
+      <tr><td>Interdisciplinary collaboration</td><td>Product-development projects involving Mechanical Engineering and Physiotherapy.</td></tr>
+      <tr><td>Funding</td><td>Innovation funding, including ₹3.45 lakh secured for further development of the flagship product.</td></tr>
+      <tr><td>Commercialisation</td><td>Selected innovations progressed toward manufacturing, packaging and selling.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>What “scale” means in this case</strong><br>
+    Scale is not presented only as a number of projects. It is the breadth of
+    pathways created from learning: project → product → IP → research → funding
+    → industry → commercialisation.
+  </div>
+
+  <div class="evidence">
+    <strong>Suggested evidence</strong>
+    <small>
+      Patent certificates/documents · project list · research outputs · grant
+      sanction/documentation · interdisciplinary project records · photographs
+      showing multiple learner projects or innovation activities.
+    </small>
+  </div>
+</section>
+
+<section id="prototype-to-product" class="section">
+  <div class="eyebrow">05</div>
+  <h2>From Prototype to Product</h2>
+  <div class="badges">
+    <span class="badge">Experiential Learning</span>
+    <span class="badge">Performance Demonstration</span>
+    <span class="badge">Iterative Practice</span>
+    <span class="badge">Real-World Application</span>
+  </div>
+  <p class="section-intro">
+    The Spine Mobilization Device demonstrates that the learning journey did not
+    stop at a student prototype. The project progressed through engineering
+    development, trials, refinement, production and commercialisation.
+  </p>
+
+  <div class="figure">
+    <div class="figure-title">Development progression</div>
+    <div class="flow">
+      <span>Feasibility</span><b>→</b>
+      <span>Concept Refinement</span><b>→</b>
+      <span>2D Engineering Drawing</span><b>→</b>
+      <span>Paper Prototype</span><b>→</b>
+      <span>Product Design</span><b>→</b>
+      <span>CAD Prototype</span><b>→</b>
+      <span>3D-Printed Prototype</span><b>→</b>
+      <span>Trials</span><b>→</b>
+      <span>Final Drawings</span><b>→</b>
+      <span>Production</span><b>→</b>
+      <span>Packaging</span><b>→</b>
+      <span>Selling</span>
+    </div>
+  </div>
+
+  <h3>Development timeline</h3>
+  <table>
+    <thead>
+      <tr><th>Period / stage</th><th>Development milestone</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>28 February 2022</td><td>Initial development work documented.</td></tr>
+      <tr><td>Development period</td><td>Feasibility, concept refinement, engineering drawings, prototypes, CAD development and trials.</td></tr>
+      <tr><td>17 February 2023</td><td>Developed prototype presented at i-Hub.</td></tr>
+      <tr><td>Following ~6 months</td><td>Manufacturing development continued after the prototype pitch.</td></tr>
+      <tr><td>Subsequent stage</td><td>Product progressed into actual production, packaging and selling.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Testing and validation</h3>
+  <p>
+    The project progressed beyond making a physical prototype into actual trials
+    and measurement. The pitch material documents use of the device, spinal
+    movement measurements and statistical analysis, together with CAD development,
+    physical prototypes, product advantages, business model and IP position.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Technical development</h3>
+      <p>Feasibility, engineering drawings, CAD, prototyping, trials and final engineering definition.</p>
+    </div>
+    <div class="card">
+      <h3>Product transition</h3>
+      <p>Movement from prototype toward production, packaging and selling.</p>
+    </div>
+    <div class="card">
+      <h3>Evidence-based refinement</h3>
+      <p>Use of trials, measurements and statistical analysis to evaluate the developed device.</p>
+    </div>
+    <div class="card">
+      <h3>Innovation support</h3>
+      <p>Patent position, business model and innovation funding supported the transition beyond the prototype.</p>
+    </div>
+  </div>
+
+  <div class="evidence">
+    <strong>Suggested visual sequence</strong>
+    <small>
+      Initial concept → engineering drawing → CAD → 3D print → physical prototype
+      → testing → final product → packaging → commercial product. This sequence
+      should use the actual project photographs and drawings wherever available.
+    </small>
+  </div>
+</section>
+
+<section id="evidence" class="section">
+  <div class="eyebrow">06</div>
+  <h2>Evidence</h2>
+  <div class="badges">
+    <span class="badge">Authentic Assessment</span>
+    <span class="badge">Performance Evidence</span>
+    <span class="badge">Rubric-Based Assessment</span>
+    <span class="badge">Evidence-Based Learning</span>
+  </div>
+  <p class="section-intro">
+    The portfolio case is supported by multiple layers of evidence. The intention
+    is to show not only what was designed, but what learners produced, what was
+    assessed, and what progressed into innovation and product outcomes.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Learning Design</h3>
+      <p>Curriculum, course structure, learning outcomes and instructional methodology.</p>
+    </div>
+    <div class="card">
+      <h3>Assessment</h3>
+      <p>Assessment schemes, rubrics, project briefs and evaluation criteria.</p>
+    </div>
+    <div class="card">
+      <h3>Learner Work</h3>
+      <p>Ideation sheets, presentations, reports, CAD, sketches, prototype photographs and testing evidence.</p>
+    </div>
+    <div class="card">
+      <h3>Innovation</h3>
+      <p>Patent documentation, product-development records, grant documentation and research outputs.</p>
+    </div>
+    <div class="card">
+      <h3>Flagship Product</h3>
+      <p>Initial concept, CAD development, 3D-printed prototype, physical prototype, testing and final product.</p>
+    </div>
+    <div class="card">
+      <h3>Commercialisation</h3>
+      <p>Evidence of production, packaging and selling for the selected product example.</p>
+    </div>
+  </div>
+
+  <h3>How the evidence demonstrates L&amp;D capability</h3>
+  <div class="grid">
+    <div class="card"><h3>Learning Design</h3><p>Curriculum, journey, activities and project structure show intentional instructional design.</p></div>
+    <div class="card"><h3>Learning Facilitation</h3><p>Learners generate and own ideas while the facilitator coaches, challenges and technically guides.</p></div>
+    <div class="card"><h3>Assessment Design</h3><p>Rubrics and observable outputs make capability visible at multiple stages of the learning journey.</p></div>
+    <div class="card"><h3>Transfer to Application</h3><p>Learning is connected to prototypes, testing, product development, IP, research and commercialisation.</p></div>
+  </div>
+
+  <h3>Downloadable evidence library</h3><p>Selected original documents are provided with this case study so that the instructional-design claims can be examined against the underlying evidence. These are supporting artifacts rather than replacements for the case narrative.</p><div class="download-list"><div class="download-card"><a href="evidence/ME524-Product-Design-Syllabus.pdf" download>ME524 — Product Design Syllabus</a><small>Original course syllabus showing the Product Design course context.</small></div><div class="download-card"><a href="evidence/ME625-Product-Development-Syllabus.pdf" download>ME625 — Product Development Syllabus</a><small>Learning outcomes and structured content covering prototyping, industrial design, 3D printing and business planning.</small></div><div class="download-card"><a href="evidence/Product-Design-Assessment-Approval.docx" download>Product Design — Assessment Approval</a><small>Original assessment-method approval document for the course.</small></div><div class="download-card"><a href="evidence/case-study-01-source.docx" download>Case Study 01 — Source Document</a><small>Detailed source narrative behind this portfolio case.</small></div><div class="download-card"><a href="evidence/Various-ID-and-LD-Methods.docx" download>L&amp;D / Instructional Design Methods Reference</a><small>Reference document used to identify relevant L&amp;D methods and techniques.</small></div></div>
+
+  <h3>Evidence map</h3>
+  <table>
+    <thead>
+      <tr><th>Claim / capability</th><th>Recommended evidence artifact</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Learning experience design</td><td>Curriculum, course structure, learning outcomes and learning-design documents.</td></tr>
+      <tr><td>Authentic assessment</td><td>Assessment scheme, project brief, rubric and completed learner submissions.</td></tr>
+      <tr><td>Experiential learning</td><td>Workshop/project photographs, ideation sheets and prototype-development records.</td></tr>
+      <tr><td>Technical product development</td><td>Engineering drawings, CAD files/screenshots, prototype photographs and testing records.</td></tr>
+      <tr><td>Innovation &amp; IP</td><td>Patent documentation and product-development records.</td></tr>
+      <tr><td>Funded innovation</td><td>Innovation grant documentation.</td></tr>
+      <tr><td>Research connection</td><td>Research publications and relevant research/project records.</td></tr>
+      <tr><td>Commercialisation</td><td>Production, packaging and selling evidence for the flagship product.</td></tr>
+    </tbody>
+  </table>
+
+
+  <div class="callout">
+    <strong>Portfolio principle</strong><br>
+    The evidence is intended to make the case auditable: learning design is shown
+    through course and assessment artifacts; capability is shown through learner
+    work; innovation is shown through IP, product-development and grant records;
+    and product impact is shown through testing, production and commercialisation
+    evidence.
+  </div>
+</section>
+
+<div class="footer">
+  Case Study 01 · Product Design &amp; Development · Dr. Chetankumar Patel
+</div>
+
+</main>
+</div>
+
+<script>
+const links = document.querySelectorAll('.nav a');
+const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      links.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector('.nav a[href="#' + entry.target.id + '"]');
+      if(active) active.classList.add('active');
+    }
+  });
+},{rootMargin:'-25% 0px -60% 0px',threshold:0});
+
+sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
