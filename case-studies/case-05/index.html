@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Case Study 05 | Curriculum, Course &amp; Content Design</title>
+<meta name="description" content="Case Study 05 — Curriculum, Course & Content Design across engineering, programming and creative-thinking domains.">
+<style>
+:root{
+  --navy:#0b315f;--blue:#1466a8;--ink:#18324f;--muted:#5f7287;
+  --bg:#f5f8fc;--line:#d9e3ee;--soft:#edf5ff;--gold:#f2b632;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.page{display:flex;min-height:100vh}
+.sidebar{width:280px;flex:0 0 280px;position:sticky;top:0;height:100vh;background:#14213d;color:#fff;padding:30px 20px;overflow-y:auto}
+.brand{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+.case-title{font-size:21px;line-height:1.28;margin:8px 0 22px}
+.nav-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:20px 0 8px}
+.nav a{display:block;color:#dbe5f5;padding:7px 9px;margin:2px 0;border-left:3px solid transparent;border-radius:0 6px 6px 0;font-size:12px;line-height:1.35}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.08);border-left-color:#fff;color:#fff;text-decoration:none}
+.backside{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.backside a{color:#dbe5f5;font-size:12px}
+.main{width:min(1180px,100%);margin:0 auto;padding:36px 34px 70px}
+@media(max-width:1050px){.sidebar{width:235px;flex-basis:235px}.main{padding:30px 24px 60px}}
+@media(max-width:760px){.page{display:block}.sidebar{position:relative;width:100%;height:auto;padding:20px 16px;overflow:visible}.nav a{display:inline-block;border-left:0;border-bottom:2px solid transparent;border-radius:6px;margin:2px;padding:7px 8px}.nav a:hover,.nav a.active{border-left:0;border-bottom-color:#fff}.main{width:100%;padding:24px 16px 55px}}
+
+.main{max-width:1250px;margin:0 auto;padding:28px 38px 70px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.back{font-size:13px;font-weight:700}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#718096}
+.hero{background:linear-gradient(135deg,#082e5b,#145d93);color:#fff;border-radius:18px;padding:36px 40px;margin-bottom:24px}
+.hero .kicker{font-size:13px;color:#ffd34d;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.hero h1{font-size:40px;line-height:1.1;margin:5px 0 10px}
+.hero p{max-width:950px;margin:8px 0;font-size:17px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:5px 10px;border-radius:999px;font-size:11px}
+.infographic,.card,.evidence a,.method-panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 5px 18px rgba(20,50,80,.05)}
+.infographic{padding:12px;margin:0 0 34px}
+.infographic img{width:100%;display:block;border-radius:10px}
+.section{scroll-margin-top:20px;margin:34px 0}
+.section h2{color:var(--navy);font-size:25px;border-bottom:3px solid #e6eef7;padding-bottom:8px;margin-bottom:16px}
+.section h3{color:var(--navy);font-size:18px;margin:20px 0 8px}
+.lead{font-size:17px;color:#435a72}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:20px}
+.card h3{margin:0 0 8px}
+.card p{margin:0}
+.card ul{margin:8px 0;padding-left:20px}
+.callout{background:var(--soft);border-left:5px solid var(--blue);padding:17px 20px;border-radius:0 10px 10px 0;margin:18px 0}
+.gold{background:#fff8df;border-left-color:var(--gold)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:20px 0}
+.flow span{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;font-weight:700}
+.flow b{color:var(--blue);font-size:17px}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;text-align:center;font-weight:700;font-size:13px}
+.step b{display:block;color:var(--blue);font-size:23px;margin-bottom:4px}
+.method-panel{padding:20px;margin:22px 0;background:#f7faff}
+.method-panel h3{margin:0 0 12px}
+.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.method{background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:12px}
+.method strong{display:block;font-size:13px;color:var(--navy)}
+.method span{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.45}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:650px}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}
+th{background:#f4f7fb;color:var(--navy);font-weight:800}
+tr:last-child td{border-bottom:0}
+.evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.evidence a{display:block;padding:18px;color:inherit}
+.evidence strong{display:block;color:var(--navy);margin-bottom:5px}
+.evidence small{display:block;color:#66788b;line-height:1.5}
+.confidential{background:#fff8e7;border:1px solid #e8d6a1;border-radius:12px;padding:17px 19px;color:#66531d;font-size:13px}
+.quote{border-left:5px solid var(--gold);background:#fff8df;padding:18px 22px;border-radius:10px;font-size:19px;font-weight:650}
+.footer{margin-top:45px;padding:20px 0;border-top:1px solid var(--line);color:#718096;font-size:12px;text-align:center}
+@media(max-width:850px){
+  .main{padding:20px 16px 55px}.hero{padding:28px 24px}.hero h1{font-size:31px}
+  .grid,.evidence,.method-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<aside class="sidebar">
+<div class="brand">Case Study 05</div>
+<h2 class="case-title">Curriculum, Course & Content Design</h2>
+<div class="nav-label">Case navigation</div>
+<nav class="nav">
+    <a href="#design-challenge" class="active">01. The Design Challenge</a>
+    <a href="#philosophy">02. My Course Design Philosophy</a>
+    <a href="#snapshots">03. Five Course Design Snapshots</a>
+    <a href="#theory-machines">04. Theory of Machines</a>
+    <a href="#kinematics">05. Kinematics of Machines</a>
+    <a href="#logic-building">06. Logic Building Techniques</a>
+    <a href="#creative-assessment">07. Creative Assessment for Logic Building</a>
+    <a href="#final-exam">08. Redesigning the Final Examination</a>
+    <a href="#content-product">09. From Teaching Practice to a Content Product</a>
+    <a href="#python">10. Programming with Python</a>
+    <a href="#computer-assessment">11. Authentic Computer-Based Assessment</a>
+    <a href="#scale">12. Assessment at Scale</a>
+    <a href="#creative-thinking">13. Creative Thinking Habits</a>
+    <a href="#toolkit">14. A Creativity Toolkit</a>
+    <a href="#learning-environment">15. Designing the Learning Environment</a>
+    <a href="#classroom-cycle">16. The Creative Thinking Classroom Cycle</a>
+    <a href="#embedded-assessment">17. Embedded Assessment</a>
+    <a href="#summative-project">18. Summative Project Assessment</a>
+    <a href="#common-pattern">19. The Common Design Pattern</a>
+    <a href="#demonstrate">20. What These Courses Demonstrate</a>
+    <a href="#ownership">21. My Range of Course Ownership</a>
+    <a href="#evidence">22. Evidence Library</a>
+    <a href="#capability">23. Professional Capability Demonstrated</a>
+    <a href="#closing">24. Portfolio Closing Statement</a>
+    <a href="case-study-05-infographic-map.html">Infographic Map</a>
+</nav>
+<div class="backside"><a href="index.html">← Back to Case Overview</a></div>
+</aside>
+<main class="main">
+
+<div class="topbar"><span class="label">Case Study 05</span></div>
+<header class="hero">
+<div class="kicker">Curriculum Design · Course Architecture · Content Development · Instructional Design</div>
+<h1>Curriculum, Course &amp; Content Design</h1>
+<p>Designing learning across engineering, technology and creative-thinking domains — from enhancing an existing curriculum to designing complete courses and authentic assessments.</p>
+<div class="tags">
+<span class="tag">Curriculum Design</span><span class="tag">Course Architecture</span><span class="tag">Content Development</span><span class="tag">Experiential Learning</span><span class="tag">Assessment Design</span><span class="tag">Digital Learning</span><span class="tag">Cross-disciplinary Learning</span>
+</div>
+</header>
+
+<div class="infographic">
+<a href="assets/case-study-05-infographic.png" target="_blank"><img src="assets/case-study-05-infographic.png" alt="Case Study 05 infographic — Curriculum, Course & Content Design"></a>
+</div>
+
+<section class="section" id="s1"><h2 id="design-challenge">01. The Design Challenge</h2>
+<p>Throughout my academic career, I have worked with learning at different levels of ownership. Sometimes the institutional curriculum was already defined and my role was to improve how the subject was experienced and learned. In other cases, I substantially modified the content and assessment. In some cases, I designed the complete course architecture from the ground up.</p>
+<div class="callout"><strong>The central distinction:</strong> What must be taught and how it should be learned.</div>
+<p>This approach has been applied across Mechanical Engineering, Computing, Programming, Creativity and Innovation, and cross-disciplinary capability development.</p>
+</section><section class="section" id="s2"><h2 id="philosophy">02. My Course Design Philosophy</h2>
+<div class="flow"><span>Learner</span><b>→</b><span>Need</span><b>→</b><span>Learning Objective</span><b>→</b><span>Content</span><b>→</b><span>Experience</span><b>→</b><span>Practice</span><b>→</b><span>Assessment</span><b>→</b><span>Evidence</span></div>
+<p>The level of ownership may vary, but the focus remains the same: convert subject content into a learning experience that enables the learner to understand, practise and apply.</p>
+</section><section class="section" id="s3"><h2 id="snapshots">03. Five Course Design Snapshots</h2>
+<p>This portfolio module presents five representative courses. Together they demonstrate different levels of curriculum and content ownership.</p>
+<div class="grid">
+<div class="card"><h3>01 · Theory of Machines</h3><p>Substantial enhancement of an existing technical curriculum.</p></div>
+<div class="card"><h3>02 · Kinematics of Machines</h3><p>Learning-experience redesign with application-oriented assessment.</p></div>
+<div class="card"><h3>03 · Logic Building Techniques</h3><p>Visualisation, engagement and creative assessment in a first-year subject.</p></div>
+<div class="card"><h3>04 · Programming with Python</h3><p>Implementation-focused learning and authentic computer-based assessment.</p></div>
+<div class="card"><h3>05 · Creative Thinking Habits</h3><p>Complete course design from the ground up.</p></div>
+</div>
+</section><section class="section" id="s4"><h2 id="theory-machines">04. Theory of Machines</h2>
+<p><strong>Enhancing an Existing Technical Curriculum.</strong> The institutional syllabus provided the formal subject structure. My role was to substantially enhance the learning experience through content modification, visualisation, simulation, practical work and problem-based learning.</p>
+<div class="grid">
+<div class="card"><h3>What I redesigned</h3><ul><li>Modified and enhanced selected topics</li><li>Designed the laboratory manual and conducted the laboratory component</li><li>Developed graphically rich presentations</li><li>Integrated simulations and videos</li><li>Introduced problem-based learning and assignments</li><li>Designed and implemented assessment activities</li><li>Conducted final evaluation</li><li>Adapted delivery for online learning during COVID-19</li></ul></div>
+<div class="card"><h3>Learning architecture</h3><div class="flow"><span>Concept</span><b>→</b><span>Visualisation</span><b>→</b><span>Simulation</span><b>→</b><span>Problem</span><b>→</b><span>Practice</span><b>→</b><span>Assessment</span></div><p>The intention was to make difficult mechanical concepts more accessible through visual and practical representation.</p></div>
+</div>
+<div class="callout"><strong>Evidence chain:</strong> Curriculum → Content Enhancement → Visual Presentation → Simulation → Problem-Based Learning → Assignment → Assessment → Final Evaluation.</div>
+</section><section class="section" id="s5"><h2 id="kinematics">05. Kinematics of Machines</h2>
+<p><strong>Turning Technical Concepts into Design Problems.</strong> The course followed an institutional syllabus, while the learning experience and application of the content were redesigned using graphical presentations, simulations, videos, problem-based learning, structured problem solving, assignments, practical work and online delivery where required.</p>
+<div class="callout"><strong>Distinctive assessment:</strong> students were asked to design an innovative mechanism for outdoor fitness equipment using AutoCAD. The assessment therefore moved beyond reproduction of kinematics knowledge toward application.</div>
+<div class="flow"><span>Kinematics Concept</span><b>→</b><span>Mechanism</span><b>→</b><span>Real-world Design Problem</span><b>→</b><span>AutoCAD</span><b>→</b><span>Student-created Solution</span></div>
+<p>This became an application-oriented assessment rather than a purely theoretical test.</p>
+</section><section class="section" id="s6"><h2 id="logic-building">06. Logic Building Techniques</h2>
+<p><strong>Making a Challenging First-Year Subject Approachable.</strong> Logic Building Techniques was a first-year B.Tech subject delivered across eight divisions, with different subject partners. Some sessions involved groups of approximately 120 students and could last up to two hours. Learners came from different states and countries with varying levels of familiarity and confidence.</p>
+<div class="grid">
+<div class="card"><h3>Making logic visible</h3><ul><li>Colourful PPT presentations</li><li>Graphical flowcharts and algorithms</li><li>Pen-tablet demonstrations</li><li>Classroom demonstrations</li><li>Handouts</li></ul></div>
+<div class="card"><h3>Design objective</h3><p>Make abstract logical structures visible and approachable while maintaining engagement across a large and diverse learner population.</p></div>
+</div>
+</section><section class="section" id="s7"><h2 id="creative-assessment">07. Creative Assessment for Logic Building</h2>
+<p>One internal examination was redesigned as a poster-making activity. Students used colours to represent flowcharts, algorithms and pseudocode.</p>
+<div class="flow"><span>Understand</span><b>→</b><span>Represent</span><b>→</b><span>Create</span><b>→</b><span>Explain</span><b>→</b><span>Demonstrate Understanding</span></div>
+<p>The assessment became an opportunity to demonstrate understanding while reducing the tension associated with a conventional examination environment.</p>
+</section><section class="section" id="s8"><h2 id="final-exam">08. Redesigning the Final Examination</h2>
+<p>The university normally used a standardized written-examination structure. I identified limitations of that format for Logic Building Techniques and obtained special permission to substantially change the examination structure.</p>
+<div class="callout"><strong>Assessment redesign cycle:</strong> Identify limitation → Propose change → Obtain approval → Redesign → Implement.</div>
+<p>The conventional two-section, 2/4/6-mark structure with optional selection was replaced with a format designed to place greater emphasis on understanding and logical thinking rather than memory.</p>
+</section><section class="section" id="s9"><h2 id="content-product">09. From Teaching Practice to a Content Product</h2>
+<p>The classroom challenges and solutions developed while teaching Logic Building Techniques eventually led to a book. The book documents teaching methods, challenges and solutions developed through classroom experience and is intended as a resource for both teachers and students.</p>
+<div class="flow"><span>Teaching challenge</span><b>→</b><span>Experimentation</span><b>→</b><span>Refined method</span><b>→</b><span>Documented methodology</span><b>→</b><span>Reusable content</span></div>
+<p>The book is therefore evidence not only of authorship, but of converting instructional practice into reusable learning content.</p>
+</section><section class="section" id="s10"><h2 id="python">10. Programming with Python</h2>
+<p><strong>From Learning Concepts to Demonstrable Capability.</strong> Before teaching the course, I developed the required Python capability through online learning, ChatGPT and Google Colab implementation. The course was then structured around implementation rather than passive understanding.</p>
+<div class="flow"><span>Concept</span><b>→</b><span>Example</span><b>→</b><span>Live Coding</span><b>→</b><span>Practice</span><b>→</b><span>Debugging</span><b>→</b><span>Problem Solving</span><b>→</b><span>Working Output</span><b>→</b><span>Application</span></div>
+<div class="card"><h3>Learning methods</h3><p>Real-world programming problems, step-by-step coding demonstrations, live coding, flowcharts and pseudocode, debugging demonstrations, progressive exercises, mini-projects and everyday-context examples. Classroom learning used PPTs, demonstrations and handouts; laboratory learning involved students solving and submitting programming problems.</p></div>
+</section><section class="section" id="s11"><h2 id="computer-assessment">11. Authentic Computer-Based Assessment</h2>
+<p>The assessment was designed to measure actual programming/problem-solving capability and was 100% computer based. Students worked directly on laboratory workstations.</p>
+<div class="grid">
+<div class="card"><h3>Representative tasks</h3><ul><li>Complete missing code</li><li>Find logical errors</li><li>Identify syntax errors</li><li>Solve task-based programming problems</li><li>Find program output</li></ul></div>
+<div class="card"><h3>Controlled environment</h3><ul><li>No internet support</li><li>Workstation-based execution</li><li>Submission through Canvas LMS</li><li>Separate evaluation of laboratory work</li></ul></div>
+</div>
+<div class="callout"><strong>Assessment question:</strong> Can the learner actually work with code, rather than simply describe programming concepts?</div>
+</section><section class="section" id="s12"><h2 id="scale">12. Assessment at Scale</h2>
+<p>A major operational challenge was conducting the assessment for approximately 480 students with limited resources.</p>
+<div class="flow"><span>Authenticity</span><b>+</b><span>Standardisation</span><b>+</b><span>Controlled Conditions</span><b>+</b><span>Digital Submission</span></div>
+<p>This makes the Python course an example of learning design combined with assessment operations at scale.</p>
+</section><section class="section" id="s13"><h2 id="creative-thinking">13. Creative Thinking Habits</h2>
+<p><strong>Complete Course Design from the Ground Up.</strong> This is the strongest example in this module of full course ownership. The purpose was to deliberately develop creativity and innovation capability rather than treating creativity as something that would emerge automatically from technical education.</p>
+<p>A previous two-week creativity workshop provided a foundation for further exploration. The course was intentionally designed for cross-disciplinary relevance rather than being restricted to Mechanical Engineering.</p>
+</section><section class="section" id="s14"><h2 id="toolkit">14. A Creativity Toolkit</h2>
+<p>The course introduced learners to a broad toolkit of 26 creativity and thinking techniques, including:</p>
+<div class="grid">
+<div class="card"><h3>Problem exploration & reframing</h3><p>Generating W-H Questions, Bugs Finding Exercise, CIA Method, Search the Space, Transfer the Problem, Reverse the Technique, Search &amp; Squeeze, Topling.</p></div>
+<div class="card"><h3>Idea generation</h3><p>BFF, Worst Idea, SCAMPER, Connecting Unconnected, Analogy, Play, Brainstorming, Host an Idea, Practice of Making.</p></div>
+<div class="card"><h3>Thinking & analysis</h3><p>Mind Mapping, Fish Bone Diagram, Thinking Fluency — Divergent / Convergent Thinking, Heuristic Method, KT Method, CORT Tools, Six Thinking Hats.</p></div>
+<div class="card"><h3>Design & innovation</h3><p>Design Thinking and the reflection habit: Reflect.</p></div>
+</div>
+<p>The breadth of the toolkit allowed different techniques to be selected according to the problem rather than forcing every problem through a single creativity method.</p>
+</section><section class="section" id="s15"><h2 id="learning-environment">15. Designing the Learning Environment</h2>
+<p>Before the semester began, students were required to obtain a dedicated creativity kit containing coloured papers, sketch pens, sticky notes, coloured cards, highlighters, Fevicol and drawing sheets.</p>
+<div class="callout"><strong>Learning environment principle:</strong> prepare the learner to draw → arrange → connect → modify → create, rather than simply listen.</div>
+</section><section class="section" id="s16"><h2 id="classroom-cycle">16. The Creative Thinking Classroom Cycle</h2>
+<div class="process">
+<div class="step"><b>01</b>Technique explained</div>
+<div class="step"><b>02</b>Relevant example</div>
+<div class="step"><b>03</b>New problem introduced</div>
+<div class="step"><b>04</b>Group application</div>
+<div class="step"><b>05</b>Real-time observation / evaluation</div>
+</div>
+<div class="callout gold"><strong>Core principle:</strong> Do not merely explain creativity. Make learners practise it.</div>
+<p>Learning and reflection followed the application stage, making practice an integral part of instruction.</p>
+</section><section class="section" id="s17"><h2 id="embedded-assessment">17. Embedded Assessment</h2>
+<p>There was no separate internal examination. Students were evaluated during the activities themselves.</p>
+<div class="flow"><span>Learning</span><b>→</b><span>Practice</span><b>→</b><span>Application</span><b>→</b><span>Observation</span><b>→</b><span>Evaluation</span></div>
+<p>Assessment became part of the learning experience rather than an event disconnected from it.</p>
+</section><section class="section" id="s18"><h2 id="summative-project">18. Summative Project Assessment</h2>
+<p>At the end of the semester, learners completed two mini-projects. They selected problems from a pool of problems, applied creativity techniques and submitted their work through Canvas LMS.</p>
+<div class="flow"><span>Creativity Techniques</span><b>→</b><span>Guided Practice</span><b>→</b><span>Group Problem Solving</span><b>→</b><span>Independent Application</span><b>→</b><span>Mini Project 1</span><b>→</b><span>Mini Project 2</span><b>→</b><span>Canvas Submission</span></div>
+<p>This allowed learners to demonstrate whether they could apply creative-thinking methods to unfamiliar problems.</p>
+</section><section class="section" id="s19"><h2 id="common-pattern">19. The Common Design Pattern</h2>
+<p>Although the five courses are very different, a common design philosophy appears across them:</p>
+<div class="table-wrap"><table><thead><tr><th>Course</th><th>Learning progression</th></tr></thead><tbody>
+<tr><td>Theory of Machines</td><td>Concept → Visualisation → Simulation → Problem → Practice → Assessment</td></tr>
+<tr><td>Kinematics</td><td>Concept → Application → Mechanism → AutoCAD → Solution</td></tr>
+<tr><td>Logic Building</td><td>Concept → Visual Representation → Practice → Creative Assessment → Understanding</td></tr>
+<tr><td>Python</td><td>Concept → Code → Debug → Problem Solve → Working Output</td></tr>
+<tr><td>Creative Thinking</td><td>Technique → Example → New Problem → Group Practice → Project</td></tr>
+</tbody></table></div>
+<div class="quote">The subject changes. The learner changes. The tools change. But the underlying design principle remains: move the learner from receiving information to doing something with it.</div>
+</section><section class="section" id="s20"><h2 id="demonstrate">20. What These Courses Demonstrate</h2>
+<div class="grid">
+<div class="card"><h3>Course Architecture</h3><p>Ability to structure content into meaningful learning sequences.</p></div>
+<div class="card"><h3>Content Development</h3><p>Presentations, handouts, manuals, examples and reusable learning resources.</p></div>
+<div class="card"><h3>Instructional Method Selection</h3><p>Visualisation, simulation, demonstration, problem-based learning, group work, projects and creative activities selected according to learning objectives.</p></div>
+<div class="card"><h3>Assessment Design</h3><p>Moving beyond conventional testing where the objective requires application or performance.</p></div>
+<div class="card"><h3>Digital Learning</h3><p>Canvas LMS, Google Colab, online delivery, digital content and computer-based assessment.</p></div>
+<div class="card"><h3>Large-Scale Delivery</h3><p>Learning design and delivery for large and diverse learner populations.</p></div>
+<div class="card"><h3>Cross-Domain Learning</h3><p>Mechanical engineering, computing, programming and creativity.</p></div>
+<div class="card"><h3>Content Product Development</h3><p>Conversion of teaching practice into a reusable book/resource.</p></div>
+</div>
+</section>
+<div class="method-panel">
+<h3>Relevant L&amp;D / Instructional Design Methodologies Evidenced in the Work</h3>
+<div class="method-grid">
+<div class="method"><strong>Outcome-Based / Objective-Driven Design</strong><span>Learner need and learning objective guide content, experience, practice and assessment.</span></div>
+<div class="method"><strong>Backward Design</strong><span>The sequence starts from what the learner needs to be able to do and works toward evidence of capability.</span></div>
+<div class="method"><strong>Problem-Based Learning</strong><span>Technical learning is repeatedly organized around problems and application.</span></div>
+<div class="method"><strong>Experiential Learning</strong><span>Learning is built through doing, practice, observation, reflection and application.</span></div>
+<div class="method"><strong>Project-Based Learning</strong><span>Mini-projects and design tasks provide opportunities to apply learning to meaningful outputs.</span></div>
+<div class="method"><strong>Authentic Assessment</strong><span>AutoCAD design tasks and computer-based programming assessments measure application and performance.</span></div>
+<div class="method"><strong>Formative / Embedded Assessment</strong><span>Creative-thinking learners are evaluated during activities rather than only through separate examinations.</span></div>
+<div class="method"><strong>Collaborative Learning</strong><span>Group application and problem solving are embedded in creative-thinking activities.</span></div>
+<div class="method"><strong>Scaffolding &amp; Guided Practice</strong><span>Examples, demonstrations, progressive exercises and guided application lead toward independent work.</span></div>
+<div class="method"><strong>Multimedia / Dual Coding</strong><span>Visual presentations, flowcharts, simulations and demonstrations make abstract concepts more accessible.</span></div>
+<div class="method"><strong>Blended / Digital Learning</strong><span>Online delivery, Canvas LMS and Google Colab are integrated into learning and assessment.</span></div>
+<div class="method"><strong>Reflective Learning</strong><span>Reflection is included as part of the creative-thinking learning cycle and evidence of learning.</span></div>
+</div></div>
+<section class="section" id="s21"><h2 id="ownership">21. My Range of Course Ownership</h2>
+<div class="flow"><span>FULL COURSE OWNERSHIP</span><b>↓</b><span>Creative Thinking Habits</span><b>↓</b><span>SUBSTANTIAL CURRICULUM ENHANCEMENT</span><b>↓</b><span>Theory of Machines</span><b>↓</b><span>LEARNING EXPERIENCE REDESIGN</span><b>↓</b><span>Kinematics · Logic Building · Python</span></div>
+<p>I have therefore worked both as a course designer and as a learning-experience designer within an existing curriculum. This distinction is important in real-world learning environments, where the curriculum, SME expertise, organizational standards and delivery constraints may already exist.</p>
+</section><section class="section" id="s22"><h2 id="evidence">22. Evidence Library</h2>
+<p>The GitHub version should not become a document dump. Each course can instead have a small evidence gallery showing representative artefacts.</p>
+<div class="evidence">
+<a href="assets/CASE-STUDY-05-SOURCE.docx"><strong>Case Study Source Document</strong><small>The source narrative and evidence plan for this portfolio case.</small></a>
+<a href="assets/case-study-05-infographic.png"><strong>Case Study 05 Infographic</strong><small>One-page visual summary of the complete case study and its learning-design themes.</small></a>
+</div>
+<div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>Course</th><th>Representative evidence</th></tr></thead><tbody>
+<tr><td>Theory of Machines</td><td>Lab Manual · PPT · Simulation · Assignment · Assessment · Final Evaluation</td></tr>
+<tr><td>Kinematics</td><td>Problem Statement · AutoCAD Mechanism · Assignment · Assessment</td></tr>
+<tr><td>Logic Building</td><td>PPT · Poster Assessment · Approval · Examination Paper · Student Work · Book</td></tr>
+<tr><td>Python</td><td>PPT · Code Demonstration · Lab Task · Assessment · Canvas · Student Output</td></tr>
+<tr><td>Creative Thinking</td><td>Course Structure · Creativity Kit · Activity · Group Work · Mini Project · Canvas</td></tr>
+</tbody></table></div>
+<div class="confidential" style="margin-top:18px"><strong>Portfolio evidence note:</strong> Detailed course materials, assessment papers, student work, LMS records and other institutional artefacts may contain learner, institutional or intellectual-property information. Only evidence appropriate for public portfolio use should be published; representative supporting artefacts can be produced for professional review where permitted.</div>
+</section><section class="section" id="s23"><h2 id="capability">23. Professional Capability Demonstrated</h2>
+<p>Across these projects, I have repeatedly worked through a cycle of:</p>
+<div class="flow"><span>Understand the learner</span><b>→</b><span>Identify the learning challenge</span><b>→</b><span>Structure the content</span><b>→</b><span>Select the learning method</span><b>→</b><span>Create the experience</span><b>→</b><span>Assess application</span><b>→</b><span>Review outcome</span><b>→</b><span>Improve design</span></div>
+<p>This is the common thread connecting my work across engineering education, computing, creativity and professional learning.</p>
+</section><section class="section" id="s24"><h2 id="closing">24. Portfolio Closing Statement</h2>
+<div class="quote">I design learning, not just lessons.</div>
+<p>My experience spans situations where the curriculum already existed and needed a better learning experience, as well as situations where I designed the course itself. Across engineering, computing and creativity, I have developed learning journeys that combine content, visualisation, practice, problem solving, projects, assessment and technology.</p>
+<p>The subject may change—from mechanisms to programming to creativity—but my design question remains consistent:</p>
+<div class="callout"><strong>What does the learner need to be able to do, and what is the most effective experience through which I can help them get there?</strong></div>
+</section>
+
+<footer class="footer">Case Study 05 · Curriculum, Course &amp; Content Design · Learning &amp; Development / Instructional Design Portfolio</footer>
+</main>
+</div>
+</body>
+</html>
